@@ -1,0 +1,39 @@
+:host {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.notification {
+  padding: 10px;
+  max-width: 200px;
+  border-radius: 4px;
+  display: flex;
+  color: #fff;
+  min-height: 38px;
+  align-items: center;
+
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.error {
+  background-color: rgb(230, 128, 128);
+}
+
+.confirmation {
+  background-color: rgb(123, 142, 123);
+}
+
+.warning {
+  background-color: rgb(212, 143, 118);
+}

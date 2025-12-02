@@ -1,0 +1,15 @@
+@for (notification of notifications$ | async; track $index) {
+<div class="notification" [class]="notification.showAs">
+  <span>{{ notification.message }}</span>
+  <button
+    (click)="closeNotification($index)"
+    *appTimeoutSpinner="{
+      timeout: 2000,
+      onTimeout: closeNotification.bind(this),
+      onTimeoutParams: [$index]
+    }"
+  >
+    x
+  </button>
+</div>
+}

@@ -28,13 +28,26 @@ button {
   border-radius: 4px;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: background 0.4s;
+
+  margin-right: 10px;
+  transition: scale 0.15s ease-out;
+
+  &:hover {
+    background: #FBD786;
+    color: #333;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+
+  &:disabled {
+    background: #ccc;
+    color: inherit;
+  }
 }
 
-button:hover {
-  background: #FBD786;
-  color: #333;
-}
+
 
 h1,
 h2,
@@ -59,7 +72,7 @@ h1 {
 h2 {
   font-size: 1.75rem;
   border-bottom: 1px solid #f7797d;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.8rem;
 }
 
 h3 {

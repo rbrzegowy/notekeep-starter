@@ -1,12 +1,11 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core'
-import { provideRouter } from '@angular/router'
+import { ApplicationConfig, provideZoneChangeDetection, isDevMode, LOCALE_ID } from '@angular/core'
+import { provideRouter, withComponentInputBinding } from '@angular/router'
 
 import { routes } from './app.routes'
-
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
-    provideRouter(routes)
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes, withComponentInputBinding()),
+    { provide: LOCALE_ID, useValue: 'pl' }
   ]
 }
